@@ -20,6 +20,9 @@ def sort_file(original_fp: str) -> None:
     filename = original_fp_path.name  # hi.txt, this is a STRING
     file_ext = Path(filename).suffix  # .txt, this is a STRING
 
+    if not file_ext:
+        return
+
     ext_folder = Path(
         Path(original_fp).parent / str(file_ext).replace(".", "")
     )  # /home/user/random/txt
